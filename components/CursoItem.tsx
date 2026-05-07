@@ -2,35 +2,36 @@
 
 import Link from "next/link";
 import { Trash } from "lucide-react";
-import { deleteAluno } from "@/app/alunos/actions";
 import { useRouter } from "next/navigation";
+import { deleteCurso } from "@/app/cursos/actions";
 
 //tipagem 
 interface Props {
-    id: number
+    id: number;
     nome: string;
 }
 
 
-export default function AlunoItem({ nome, id }: Props) {
+export default function CursoItem({ nome, id }: Props) {
     const router = useRouter();
 
-    function handleDelete(){
-        deleteAluno(id);
+    function handleDelete() {
+        deleteCurso(id);
         router.refresh();
     }
 
     return (
         <div className="flex gap-1">
-            <Link href={`/aluno/${id}`}>
-                <li className="underline decoration-pink-700 decoration-wavy">
+            <Link href={`/curso/${id}`}>
+                <li className="underline decoration-pink-700">
                     {nome}</li>
             </Link>
-            <button className="text-blue-300" onClick={handleDelete}
+            <button className="text-red-900" onClick={handleDelete}
             >
-                <Trash/></button>
+                <Trash /></button>
 
         </div>
 
     );
+
 }

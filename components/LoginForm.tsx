@@ -19,6 +19,7 @@ export default function LoginForm({onSend}: Props) {
             alert(response);
             return;
         }
+        router.push("/")
     }
     return (
         <div className="mt-10 mb-10 rounded-mb shadow-md shadow-pink-300 p-2 bg-pink-200  w-150 h-90 flex flex-col items-center ">
