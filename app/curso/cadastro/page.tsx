@@ -10,12 +10,12 @@ export default function AlunoCadastroPage() {
     const [descricao, setdescricao] = useState("");
     const router = useRouter();
 
-async function handleSubmit(e: SubmitEvent) {
+    async function handleSubmit(e: SubmitEvent) {
         e.preventDefault();
         const response = await CreateCurso({
             nome,
-            cargaHoraria: Number(cargaHoraria),
             professor,
+            cargaHoraria: Number(cargaHoraria),
             descricao
         });
 
@@ -30,6 +30,7 @@ async function handleSubmit(e: SubmitEvent) {
 
         alert(response);
     }
+
 
 
     return (
@@ -53,7 +54,7 @@ async function handleSubmit(e: SubmitEvent) {
                 />
                 <input
                     className="border border-white text-white pl-1"
-                    type="number"
+                    type="text"
                     placeholder="professor"
                     value={professor}
                     onChange={(e) => setprofessor(e.target.value)}
@@ -65,7 +66,7 @@ async function handleSubmit(e: SubmitEvent) {
                     value={descricao}
                     onChange={(e) => setdescricao(e.target.value)}
                 />
-                <button className="bg-white text-black py-2 rounded-lg " type="submit">Cadastrar</button>
+                <button className="bg-white text-red-950 py-2 rounded-lg " type="submit">Cadastrar</button>
 
             </form>
         </div>

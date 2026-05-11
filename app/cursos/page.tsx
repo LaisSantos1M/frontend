@@ -1,5 +1,6 @@
 import CursoItem from "@/components/CursoItem";
 import { getCursos } from "./actions";
+import Link from "next/link";
 
 
 export default async function CursosPage() {
@@ -23,6 +24,9 @@ export default async function CursosPage() {
                 </ul>
             </div>
 
+             <Link href="/curso/cadastro" className="px-5 py-2 bg-white text-black mt-5 rounded-lg" >
+            Cadastrar curso
+            </Link>
 
         </div>
     )

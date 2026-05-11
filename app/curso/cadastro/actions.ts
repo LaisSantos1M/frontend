@@ -19,7 +19,6 @@ export async function CreateCurso(curso: CreateCurso) {
     const response = await fetch("http://localhost:8080/cursos", {
         method: "POST",
         headers: {
-            
             Authorization: `Bearer ${token}`
             ,"Content-Type":"application/json",
         },
